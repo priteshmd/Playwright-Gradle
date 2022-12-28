@@ -1,2 +1,2 @@
 tasks:
-  - init: gradle build && gradlew task installdeps && gradle test
+  - init: gradle build && gradle task installdeps && gradle test
