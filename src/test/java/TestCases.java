@@ -13,7 +13,7 @@ public class TestCases {
     static void launchBrowser() {
         playwright = Playwright.create();
         new BrowserType.LaunchOptions().setSlowMo(290);
-        browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
+        browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(true));
     }
     @BeforeTest
     void createContextAndPage() {
