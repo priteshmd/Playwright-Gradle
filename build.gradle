@@ -27,7 +27,14 @@ dependencies {
     implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.5.0'
 
 }
+task installDeps(type: JavaExec) {
+   classpath = sourceSets.main.runtimeClasspath
 
+   mainClass = 'com.microsoft.playwright.CLI'
+
+   // arguments to pass to the application
+   args 'install-deps'
+ }
 test {
     useTestNG() {
         useDefaultListeners = true
