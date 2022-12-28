@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://mvnrepository.com/artifact/com.microsoft.playwright/playwright"
+    }
+    maven {
+        url "https://mvnrepository.com/artifact/org.testng/testng"
+    }
+    maven {
+        url "https://mvnrepository.com/artifact/io.cucumber/cucumber-testng"
+    }
+
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation group: 'com.microsoft.playwright', name: 'playwright', version: '1.26.1'
+    implementation group: 'org.testng', name: 'testng', version: '7.5'
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.5.0'
+
+}
+
+test {
+    useTestNG() {
+        useDefaultListeners = true
+    }
+    testLogging {
+        events "PASSED", "FAILED", "SKIPPED"
+    }
+}
